@@ -1,0 +1,7 @@
+.nav-ul {
+  display: flex;
+  gap: 100px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 200;
+}
