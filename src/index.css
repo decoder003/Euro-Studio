@@ -8,6 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f6f1d5;
   font-family: 'Playfair Display', serif;
+  user-select: none;
+  touch-action: pan-y;
 }
 
 code {

@@ -7,3 +7,29 @@
   color: #fff;
   font-size: 15px;
 }
+.hamburger {
+  display: none;
+}
+
+.button-animation {
+  animation: btnAnimation 0.8s ease-in-out 1;
+}
+@keyframes btnAnimation {
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .Header-col3-button {
+    font-size: 14px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-hamburger {
+    display: block;
+  }
+}
