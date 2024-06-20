@@ -1,57 +1,111 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+const buttonVariants = {
+  hidden: {
+    y: 0,
+  },
+  hover: {
+    y: -20,
+    transition: {
+      type: 'spring',
+      stiffness: 120,
+    },
+  },
+};
+
 const h1Variants = {
   hidden: {
     opacity: 0,
-    y: -10,
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
   },
 };
-export default function Home() {
-  const heading = 'Interior Design';
 
+export default function Home() {
+  const heading = 'Make Your Interior More';
+  const heading2 = 'Minimaistic & Modern';
+  const btnRef = useRef();
+  function buttonEnter() {
+    btnRef.current.classList.remove('button-animation');
+  }
+  function buttonLeave() {
+    btnRef.current.classList.add('button-animation');
+  }
   return (
-    <main>
-      <div className="container">
+    <main className="home">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-6">
-            <div className="d-grid  justify-content-center align-content-center gap-3 mt-5">
+          <div className="col-12 home-col">
+            <div className="d-flex flex-column justify-content-center align-items-center gap-4 mt-5 mt-sm-5 mt-md-0">
               <div className="d-flex gap-1">
-                {heading.split('').map((head, index) => (
-                  <motion.h1
-                    key={index}
-                    variants={h1Variants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{
-                      type: 'spring',
-                      duration: 2,
-                      delay: index * 0.1,
-                      stiffness: 120,
-                    }}>
-                    {head}
-                  </motion.h1>
-                ))}
+                {heading.split('').map((head, index) => {
+                  return head === ' ' ? (
+                    <h1>&nbsp;</h1>
+                  ) : (
+                    <motion.h1
+                      className="fw-bold home-col-h1"
+                      key={index}
+                      variants={h1Variants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{
+                        type: 'spring',
+                        duration: 2,
+                        delay: index * 0.1,
+                        stiffness: 120,
+                      }}>
+                      {head}
+                    </motion.h1>
+                  );
+                })}
               </div>
-              <p>
-                Step into a world where the art of Interior Design is meticulously crafted to bring together timeless
-                elegance and cutting-edge modern Innovation, Allowing you to transform your living spaces into the
-                epitome of luxury and sophistication
-              </p>
+              <div className="d-flex gap-1">
+                {heading2.split('').map((head, index) => {
+                  return head === ' ' ? (
+                    <h1>&nbsp;</h1>
+                  ) : (
+                    <motion.h1
+                      className="fw-bold home-col-h1"
+                      key={index}
+                      variants={h1Variants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{
+                        type: 'spring',
+                        duration: 2,
+                        delay: index * 0.1,
+                        stiffness: 120,
+                      }}>
+                      {head}
+                    </motion.h1>
+                  );
+                })}
+              </div>
               <div>
-                <button className="btn home-col1-btn">Explore Now</button>
+                <p className="text-center fw-bold home-col-p">
+                  Bringing interiors to life, understanding the person or people
+                </p>
+                <p className="text-center fw-bold home-col-p">living in a home is far greater need in design</p>
               </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="card">
-              <img src="" />
+
+              <div>
+                <motion.button
+                  ref={btnRef}
+                  className="btn home-col1-btn"
+                  onMouseEnter={buttonEnter}
+                  onMouseLeave={buttonLeave}
+                  variants={buttonVariants}
+                  initial="hidden"
+                  whileTap="hover">
+                  Explore Now
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>

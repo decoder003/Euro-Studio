@@ -20,6 +20,7 @@ const liVariants = {
     transition: {
       type: 'spring',
       stiffness: 120,
+      duration: 5,
     },
   },
 };

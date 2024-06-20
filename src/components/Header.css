@@ -1,11 +1,22 @@
 .logo {
-  width: 100px;
+  width: 200px;
   height: 100px;
 }
+.mode {
+  width: 30px;
+  height: 30px;
+}
+.header {
+  background-color: var(--background-color);
+}
 .Header-col3-button {
-  background-color: black;
-  color: #fff;
+  background-color: var(--color);
+  color: var(--background-color);
   font-size: 15px;
+}
+.Header-col3-button:hover {
+  background-color: var(--background-color);
+  color: var(--color);
 }
 .hamburger {
   display: none;
@@ -28,6 +39,7 @@
   }
   .hamburger {
     display: block;
+    color: var(--color);
   }
   .nav-hamburger {
     display: block;

@@ -1,9 +1,47 @@
 .home-col1-btn {
-  background-color: black;
-  color: #fff;
-  font-size: 11px;
+  background-color: var(--color);
+  color: var(--background-color);
+  font-size: 15px;
+  font-weight: bold;
+  width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .home-col1-btn:hover {
+  border: 2px solid var(--background-color);
+}
+
+.home {
+  background-image: url('../images/home/home-background.jpg');
+  background-size: cover;
+  height: 85vh;
+  position: relative;
+  isolation: isolate;
+}
+.home::after {
+  content: '';
   background-color: black;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+.home-col {
+  margin-top: 150px;
+}
+
+.home-col-h1,
+.home-col-p {
   color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+  .home-col-h1 {
+    font-size: 22px;
+  }
+  .home-col-p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1200px) {
 }
