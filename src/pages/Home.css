@@ -17,6 +17,7 @@
   height: 85vh;
   position: relative;
   isolation: isolate;
+  border-bottom: 10px solid #a9a9a9;
 }
 .home::after {
   content: '';
@@ -34,7 +35,259 @@
 .home-col-p {
   color: #fff;
 }
-
+.home-col1-h3 h3 {
+  line-height: 100px;
+  color: var(--color);
+}
+.bg-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+.svg-para,
+.sub-heading {
+  color: var(--color);
+}
+.svg {
+  margin: 60px 0;
+  background-color: var(--svg-background);
+}
+.quotes {
+  padding-top: 100px;
+  color: var(--svg-background);
+}
+.quotes-first-line {
+  width: 100px;
+  height: 1px;
+  background-color: var(--svg-background);
+}
+.quotes-second-line {
+  width: 50px;
+  height: 1px;
+  background-color: var(--svg-background);
+}
+.line-col-1,
+.line-col-2 {
+  margin-top: 20px;
+}
+.Expanding-card {
+  width: 100px;
+  height: 500px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  isolation: isolate;
+}
+.Expanding-card::after {
+  content: '';
+  /* width: 100px;
+  height: 500px; */
+  background-color: black;
+  border-radius: 50px;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+.Expanding-card:hover {
+  width: 500px;
+  height: 500px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+.Card-body {
+  display: none;
+}
+.card-body-container {
+  width: 400px;
+  height: 100px;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out 1s;
+}
+.card-body-container1 {
+  width: 400px;
+  height: 100px;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out 1s;
+}
+.Expanding-card:hover .card-body-container {
+  display: flex;
+  transition: all 0.5s ease-in-out 1s;
+}
+.Expanding-cards-main {
+  border-bottom: 10px solid #a9a9a9;
+  border-top: 10px solid #a9a9a9;
+  padding-top: 50px;
+  position: relative;
+  isolation: isolate;
+  background-image: url('../images/home/Expanding-cards-background.jpeg');
+}
+.Expanding-cards-main::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.1;
+}
+.card-body-2 {
+  display: none;
+}
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--background-color);
+  border-radius: 2px;
+}
+.project-col-1 {
+  color: var(--background-color);
+}
+.react-icons {
+  width: 20px;
+  height: 20px;
+}
+.project-heading {
+  line-height: 50px;
+  word-spacing: 10px;
+}
+.project-col-2-card {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+.project-col-2-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: black;
+  opacity: 0.2;
+  border-radius: 30px;
+}
+.project-col-2-card::before {
+  content: '';
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  z-index: -1;
+  background-color: #a9a9a9;
+  opacity: 0.5;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.project-col-2-card video {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.getintouch-button {
+  background-color: var(--background-color);
+  color: var(--color);
+  font-weight: 300;
+}
+.getintouch-button:hover {
+  border: 1px solid var(--color);
+  color: var(--background-color);
+}
+.getintouch-col1,
+.getintouch-col2 {
+  color: #fff;
+}
+.card1 {
+  background-image: url('../images/home/model-kitchen-card.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.card2 {
+  background-image: url('../images/home/wardrobe-card.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.card3 {
+  background-image: url('../images/home/bathroom-card.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+.card4 {
+  background-image: url('../images/home/master-bedroom.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.card5 {
+  background-image: url('../images/home/pooja-card.jpeg');
+  background-position: center;
+  background-size: 400px;
+}
+.card6 {
+  background-image: url('../images/home/kids-room-card.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+.card7 {
+  background-image: url('../images/home/swimming-pool-card.jpeg');
+  background-position: center;
+  background-size: 600px 600px;
+  background-repeat: no-repeat;
+}
+.card8 {
+  background-image: url('../images/home/indoor-home-theatre-card.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+.getintouch-col1 {
+  background-image: url('../images/home/getintouch-bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+.getintouch-col1::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.7;
+}
+.getintouch-col2 {
+  background-image: url('../images/home/getintouch-bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+.getintouch-col2::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
 @media screen and (max-width: 576px) {
   .home-col-h1 {
     font-size: 22px;
@@ -42,6 +295,68 @@
   .home-col-p {
     font-size: 12px;
   }
+  .svg-col-2,
+  .svg-col-3,
+  .svg-col-4 {
+    padding-left: 30px;
+  }
+  .svg-col-2,
+  .svg-col-3 {
+    padding-bottom: 50px;
+  }
+  .line-col-1 {
+    margin-bottom: 50px;
+  }
+
+  .card-body-2 {
+    display: none;
+  }
+  .Expanding-card:hover .card-body-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-content {
+    padding-top: 20px;
+  }
+  .getintouch-col1 {
+    padding-left: 20px;
+  }
+  .project-col-2-card {
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .line-col-1 {
+    margin-bottom: 50px;
+  }
+  .card-body-2 {
+    display: none;
+  }
+  .Expanding-card:hover .card-body-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-content {
+    margin-top: 30px;
+  }
+  .card-body-container1 {
+    width: 400px;
+    height: 200px;
+  }
 }
 @media screen and (max-width: 1200px) {
+  .card-body-2 {
+    display: none;
+  }
+  .Expanding-card:hover .card-body-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-content {
+    margin-top: 20px;
+  }
 }

@@ -7,16 +7,17 @@
   height: 30px;
 }
 .header {
-  background-color: var(--background-color);
+  background-color: var(--nav-background);
 }
 .Header-col3-button {
-  background-color: var(--color);
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--color);
   font-size: 15px;
 }
 .Header-col3-button:hover {
-  background-color: var(--background-color);
-  color: var(--color);
+  background-color: var(--color);
+  color: var(--background-color);
+  border: 1px solid var(--background-color);
 }
 .hamburger {
   display: none;
@@ -39,7 +40,7 @@
   }
   .hamburger {
     display: block;
-    color: var(--color);
+    color: var(--background-color);
   }
   .nav-hamburger {
     display: block;
