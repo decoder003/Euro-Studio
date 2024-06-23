@@ -43,7 +43,15 @@
   width: 60px;
   height: 60px;
   background-color: var(--color);
+  color: var(--background-color);
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg-react-icons {
+  width: 25px;
+  height: 25px;
 }
 .svg-para,
 .sub-heading {
@@ -88,7 +96,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.1;
 }
 .Expanding-card:hover {
   width: 500px;
@@ -173,7 +181,7 @@
 }
 .project-col-2-card {
   width: 300px;
-  height: 300px;
+  height: 500px;
   border-radius: 20px;
 }
 .project-col-2-card::after {
@@ -182,13 +190,13 @@
   inset: 0;
   z-index: 1;
   background-color: black;
-  opacity: 0.2;
+  opacity: 0;
   border-radius: 30px;
 }
 .project-col-2-card::before {
   content: '';
   width: 300px;
-  height: 300px;
+  height: 500px;
   position: absolute;
   right: 50px;
   bottom: 50px;
@@ -200,7 +208,7 @@
 }
 .project-col-2-card video {
   width: 300px;
-  height: 300px;
+  height: 500px;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -271,7 +279,7 @@
   background-color: black;
   inset: 0;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.3;
 }
 .getintouch-col2 {
   background-image: url('../images/home/getintouch-bg2.jpg');
@@ -286,7 +294,7 @@
   background-color: black;
   inset: 0;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 @media screen and (max-width: 576px) {
   .home-col-h1 {
@@ -333,6 +341,10 @@
   }
   .card-body-2 {
     display: none;
+  }
+  .svg-col-2,
+  .svg-col-3 {
+    padding-bottom: 50px;
   }
   .Expanding-card:hover .card-body-2 {
     display: flex;

@@ -1,10 +1,17 @@
-import React, { useRef, Fragment } from 'react';
+import React, { useRef, Fragment, useEffect } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { delay, motion } from 'framer-motion';
 import { MdOutlineRocketLaunch } from 'react-icons/md';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import { FaRegBuilding } from 'react-icons/fa';
+import { HiOutlineBuildingStorefront } from 'react-icons/hi2';
+import { PiBuildingApartment } from 'react-icons/pi';
+import { GiSpookyHouse } from 'react-icons/gi';
+import { BsBuildings } from 'react-icons/bs';
+import { FaKitchenSet } from 'react-icons/fa6';
+import { LuSofa } from 'react-icons/lu';
 import videoBg from '../images/home/card-video-bg.mp4';
 
 const buttonVariants = {
@@ -28,6 +35,17 @@ const h1Variants = {
   visible: {
     opacity: 1,
     y: 0,
+  },
+};
+const quoteLineVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      repeat: 2,
+    },
   },
 };
 
@@ -118,16 +136,32 @@ export default function Home() {
       </main>
       <div className="container quotes d-flex flex-column flex-md-row">
         <div className="d-flex flex-column gap-3 align-items-center line-col-1">
-          <div className="quotes-first-line"></div>
-          <div className="quotes-second-line"></div>
+          <motion.div
+            className="quotes-first-line"
+            variants={quoteLineVariants}
+            initial="hidden"
+            whileInView="visible"></motion.div>
+          <motion.div
+            className="quotes-second-line"
+            variants={quoteLineVariants}
+            initial="hidden"
+            whileInView="visible"></motion.div>
         </div>
         <div className="d-flex flex-column  justify-content-center">
           <h1 className="text-center">I hate vacations. if you can build buildings,why sit on the beach?</h1>
           <p className="text-end">--Philip Johnson</p>
         </div>
         <div className="d-flex flex-column-reverse flex-md-column gap-3 align-items-center line-col-2">
-          <div className="quotes-first-line"></div>
-          <div className="quotes-second-line"></div>
+          <motion.div
+            className="quotes-first-line"
+            variants={quoteLineVariants}
+            initial="hidden"
+            whileInView="visible"></motion.div>
+          <motion.div
+            className="quotes-second-line"
+            variants={quoteLineVariants}
+            initial="hidden"
+            whileInView="visible"></motion.div>
         </div>
       </div>
       <Svg />
@@ -152,7 +186,7 @@ function Svg() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-sm-3 col-md-3">
+            <div className="col-12 col-sm-12 col-md-3">
               <div className="home-col1-h3 d-flex justify-content-center">
                 <h3>
                   What We Do
@@ -163,11 +197,13 @@ function Svg() {
                 </h3>
               </div>
             </div>
-            <div className="col-12 col-sm-3 col-md-3 svg-col-2">
+            <div className="col-12 col-sm-12 col-md-3 svg-col-2">
               <div className="d-flex flex-column gap-5">
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <FaRegBuilding className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
                       <h5>Interior Design</h5>
                       <h6>Interior Design</h6>
@@ -180,9 +216,11 @@ function Svg() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <HiOutlineBuildingStorefront className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
+                      <h5>Cafe Interior</h5>
                       <h6>Interior Design</h6>
                     </div>
                   </div>
@@ -193,9 +231,11 @@ function Svg() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <PiBuildingApartment className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
+                      <h5>Apartment Make-Over</h5>
                       <h6>Interior Design</h6>
                     </div>
                   </div>
@@ -206,13 +246,17 @@ function Svg() {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-3 col-md-3 svg-col-3">
+            <div className="col-12 col-sm-12 col-md-3 svg-col-3">
               <div className="d-flex flex-column gap-5">
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" className="svg-react-icons">
+                        <path d="M6 2a2 2 0 00-2 2v15c0 1.11.89 2 2 2v1h2v-1h8v1h2v-1c1.11 0 2-.89 2-2V4a2 2 0 00-2-2H6m0 2h5v15H6V4m7 0h5v15h-5V4m-5 6v3h2v-3H8m6 0v3h2v-3h-2z" />
+                      </svg>
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
+                      <h5>Wardrobe</h5>
                       <h6>Interior Design</h6>
                     </div>
                   </div>
@@ -223,10 +267,12 @@ function Svg() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <GiSpookyHouse className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
-                      <h6>Interior Design</h6>
+                      <h5>Landscaping</h5>
+                      <h6>Exterior Design</h6>
                     </div>
                   </div>
                   <p className="svg-para">
@@ -236,10 +282,12 @@ function Svg() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <BsBuildings className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
-                      <h6>Interior Design</h6>
+                      <h5>Building Cnnstruction</h5>
+                      <h6>Building Contract</h6>
                     </div>
                   </div>
                   <p className="svg-para">
@@ -249,13 +297,15 @@ function Svg() {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-3 col-md-3 svg-col-4">
+            <div className="col-12 col-sm-12 col-md-3 svg-col-4">
               <div className="d-flex flex-column gap-5">
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <FaKitchenSet className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
+                      <h5>Modular Kitchen</h5>
                       <h6>Interior Design</h6>
                     </div>
                   </div>
@@ -266,9 +316,11 @@ function Svg() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <div className="d-flex gap-3">
-                    <div className="bg-icon"></div>
+                    <div className="bg-icon">
+                      <LuSofa className="svg-react-icons" />
+                    </div>
                     <div className="sub-heading">
-                      <h5>Interior Design</h5>
+                      <h5>Boutique Interior</h5>
                       <h6>Interior Design</h6>
                     </div>
                   </div>
@@ -449,6 +501,19 @@ function Expandingcards() {
   );
 }
 
+const LineVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      repeat: 1,
+      type: 'spring',
+      stiffness: 120,
+    },
+  },
+};
 function Projectsteps() {
   return (
     <main className="my-5">
@@ -464,7 +529,11 @@ function Projectsteps() {
                   <div className="project-icon">
                     <MdOutlineRocketLaunch className="react-icons" />
                   </div>
-                  <div className="project-line"></div>
+                  <motion.div
+                    className="project-line"
+                    variants={LineVariants}
+                    initial="hidden"
+                    whileInView="visible"></motion.div>
                 </div>
                 <div className="d-flex flex-column gap-3 justify-content-center project-content">
                   <h5>Start Project</h5>
@@ -479,7 +548,11 @@ function Projectsteps() {
                   <div className="project-icon">
                     <HiOutlineLightBulb className="react-icons" />
                   </div>
-                  <div className="project-line"></div>
+                  <motion.div
+                    className="project-line"
+                    variants={LineVariants}
+                    initial="hidden"
+                    whileInView="visible"></motion.div>
                 </div>
                 <div className="d-flex flex-column gap-3 justify-content-center project-content">
                   <h5>Craft</h5>
@@ -516,21 +589,73 @@ function Projectsteps() {
   );
 }
 
+const buttonVariants2 = {
+  hidden: {
+    y: 0,
+  },
+  hover: {
+    y: -20,
+    transition: {
+      type: 'spring',
+      stiffness: 120,
+    },
+  },
+};
+
+const getInTouchParaVariants = {
+  hidden: {
+    scale: 0.2,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duartion: 1.5,
+      type: 'spring',
+      stiffness: 120,
+    },
+  },
+};
 function Getintouch() {
+  const btnRef = useRef();
+  function buttonEnter() {
+    btnRef.current.classList.remove('button-animation');
+  }
+  function buttonLeave() {
+    btnRef.current.classList.add('button-animation');
+  }
   return (
     <section className="mt-5">
       <div className="row">
         <div className="col-6 d-flex justify-content-center align-items-center getintouch-col1 py-4">
           <div className="">
-            <p className="text-center">You Dream It, We Design Them</p>
-            <h6 className="text-center">Let's Collborate</h6>
+            <motion.p className="text-center" variants={getInTouchParaVariants} initial="hidden" whileInView="visible">
+              You Dream It, We Design Them
+            </motion.p>
+            <motion.h6 className="text-center" variants={getInTouchParaVariants} initial="hidden" whileInView="visible">
+              Let's Collborate
+            </motion.h6>
           </div>
         </div>
         <div className="col-6 d-flex justify-content-center align-items-center getintouch-col2 py-4">
           <div className="">
-            <p className="text-center">Vendors</p>
-            <h6 className="text-center">Let's Collaborate</h6>
-            <button className="btn getintouch-button mt-3">Get In Touch</button>
+            <motion.p className="text-center" variants={getInTouchParaVariants} initial="hidden" whileInView="visible">
+              Vendors
+            </motion.p>
+            <motion.h6 className="text-center" variants={getInTouchParaVariants} initial="hidden" whileInView="visible">
+              Let's Collaborate
+            </motion.h6>
+            <motion.button
+              ref={btnRef}
+              className="btn getintouch-button mt-3"
+              onMouseEnter={buttonEnter}
+              onMouseLeave={buttonLeave}
+              variants={buttonVariants2}
+              initial="hidden"
+              whileTap="hover">
+              Get In Touch
+            </motion.button>
           </div>
         </div>
       </div>

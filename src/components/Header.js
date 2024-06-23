@@ -1,5 +1,5 @@
 import './Header.css';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -14,6 +14,21 @@ const buttonVariants = {
     transition: {
       type: 'spring',
       stiffness: 120,
+    },
+  },
+};
+
+const hamburgerVariants = {
+  hidden: {
+    opacity: 0,
+    rotate: '-360deg',
+  },
+  visible: {
+    opacity: 1,
+    rotate: '0deg',
+    transition: {
+      duration: 2,
+      ease: 'easeInOut',
     },
   },
 };
@@ -46,9 +61,9 @@ export default function Header() {
             <Nav navRef={navRef} />
           </div>
           <div className="col-sm-3 col-md-3 col-6 d-flex justify-content-evenly justify-content-sm-around justify-content-md-around align-items-center">
-            <div onClick={modeHandler}>
+            <motion.div onClick={modeHandler} variants={hamburgerVariants} initial="hidden" animate="visible">
               <img src={!mode ? 'Assets/sun.png' : 'Assets/moon.png'} className="mode" />
-            </div>
+            </motion.div>
             <motion.button
               ref={btnRef}
               className="btn fw-bold border Header-col3-button"
