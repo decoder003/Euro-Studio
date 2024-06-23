@@ -1,5 +1,6 @@
 import './Header.css';
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -7,10 +8,11 @@ import { Spiral as Hamburger } from 'hamburger-react';
 
 const buttonVariants = {
   hidden: {
-    y: 0,
+    scale: 1,
   },
   hover: {
-    y: -20,
+    scale: 1.1,
+    ease: 'easeInOut',
     transition: {
       type: 'spring',
       stiffness: 120,
@@ -37,11 +39,15 @@ export default function Header() {
   const [mode, setMode] = useState(false);
   const navRef = useRef();
   const btnRef = useRef();
+  const navigate = useNavigate();
   function buttonEnter() {
     btnRef.current.classList.remove('button-animation');
   }
   function buttonLeave() {
     btnRef.current.classList.add('button-animation');
+  }
+  function loginHandler() {
+    navigate('/login');
   }
   function navHandler() {
     navRef.current.classList.toggle('nav-hamburger');
@@ -69,9 +75,10 @@ export default function Header() {
               className="btn fw-bold border Header-col3-button"
               onMouseEnter={buttonEnter}
               onMouseLeave={buttonLeave}
+              onClick={loginHandler}
               variants={buttonVariants}
               initial="hidden"
-              whileTap="hover">
+              whileHover="hover">
               Sign In
             </motion.button>
             <div className="hamburger" onClick={navHandler}>

@@ -63,7 +63,7 @@ export default function Nav({ navRef }) {
           onMouseEnter={liEnter1}
           onMouseLeave={liLeave1}
           variants={liVariants}>
-          <Link to="" className="nav-ul-li-Link">
+          <Link to="/" className="nav-ul-li-Link">
             Home
           </Link>
         </motion.li>

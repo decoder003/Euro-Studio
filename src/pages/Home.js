@@ -188,7 +188,7 @@ function Svg() {
           <div className="row">
             <div className="col-12 col-sm-12 col-md-3">
               <div className="home-col1-h3 d-flex justify-content-center">
-                <h3>
+                <h3 className="">
                   What We Do
                   <br />
                   Best in the

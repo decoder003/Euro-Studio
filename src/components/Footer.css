@@ -1,5 +1,6 @@
 .footer {
-  background-color: #878787;
+  background-color: var(--nav-background);
+  color: var(--background-color);
 }
 .para {
   word-spacing: 1px;

@@ -38,6 +38,8 @@
 .home-col1-h3 h3 {
   line-height: 100px;
   color: var(--color);
+  font-size: 50px;
+  margin-right: 50px;
 }
 .bg-icon {
   width: 60px;
@@ -96,7 +98,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0;
 }
 .Expanding-card:hover {
   width: 500px;
@@ -202,7 +204,7 @@
   bottom: 50px;
   z-index: -1;
   background-color: #a9a9a9;
-  opacity: 0.5;
+  opacity: 0.9;
   border-radius: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -334,6 +336,9 @@
     margin-bottom: 100px;
     margin-top: 100px;
   }
+  .home-col1-h3 h3 {
+    margin-right: 0px;
+  }
 }
 @media screen and (max-width: 800px) {
   .line-col-1 {
@@ -357,6 +362,9 @@
   .card-body-container1 {
     width: 400px;
     height: 200px;
+  }
+  .home-col1-h3 h3 {
+    margin-right: 0px;
   }
 }
 @media screen and (max-width: 1200px) {
