@@ -1,4 +1,4 @@
-import React, { useRef, Fragment, useEffect } from 'react';
+import React, { useRef, Fragment, useEffect, useState } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { delay, motion } from 'framer-motion';
@@ -53,6 +53,7 @@ export default function Home() {
   const heading = 'Make Your Interior More';
   const heading2 = 'Minimaistic & Modern';
   const btnRef = useRef();
+
   function buttonEnter() {
     btnRef.current.classList.remove('button-animation');
   }
@@ -199,7 +200,7 @@ function Svg() {
             </div>
             <div className="col-12 col-sm-12 col-md-3 svg-col-2">
               <div className="d-flex flex-column gap-5">
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <FaRegBuilding className="svg-react-icons" />
@@ -214,7 +215,7 @@ function Svg() {
                     velit iaculis vitae.
                   </p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <HiOutlineBuildingStorefront className="svg-react-icons" />
@@ -229,7 +230,7 @@ function Svg() {
                     velit iaculis vitae.
                   </p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <PiBuildingApartment className="svg-react-icons" />
@@ -248,7 +249,7 @@ function Svg() {
             </div>
             <div className="col-12 col-sm-12 col-md-3 svg-col-3">
               <div className="d-flex flex-column gap-5">
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" className="svg-react-icons">
@@ -265,7 +266,7 @@ function Svg() {
                     velit iaculis vitae.
                   </p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <GiSpookyHouse className="svg-react-icons" />
@@ -280,7 +281,7 @@ function Svg() {
                     velit iaculis vitae.
                   </p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <BsBuildings className="svg-react-icons" />
@@ -299,7 +300,7 @@ function Svg() {
             </div>
             <div className="col-12 col-sm-12 col-md-3 svg-col-4">
               <div className="d-flex flex-column gap-5">
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <FaKitchenSet className="svg-react-icons" />
@@ -314,7 +315,7 @@ function Svg() {
                     velit iaculis vitae.
                   </p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column gap-3 svg-box">
                   <div className="d-flex gap-3">
                     <div className="bg-icon">
                       <LuSofa className="svg-react-icons" />

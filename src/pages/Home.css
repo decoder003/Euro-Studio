@@ -50,6 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 .svg-react-icons {
   width: 25px;
@@ -63,6 +64,26 @@
   margin: 60px 0;
   background-color: var(--svg-background);
 }
+.svg-box {
+  transition: all 0.5s ease-in-out;
+}
+.svg-box:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  transition: all 0.3s ease-in-out;
+}
+.svg-box:hover .bg-icon {
+  color: black;
+  background-color: #fff700;
+  transition: all 0.3s ease-in-out;
+}
+/* .svg-box:hover .svg-para,
+.sub-heading {
+  color: var(--background-color);
+} */
 .quotes {
   padding-top: 100px;
   color: var(--svg-background);

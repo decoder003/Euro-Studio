@@ -73,7 +73,7 @@ export default function Nav({ navRef }) {
           variants={liVariants}
           onMouseEnter={liEnter2}
           onMouseLeave={liLeave2}>
-          <Link to="" className="nav-ul-li-Link">
+          <Link to="/services" className="nav-ul-li-Link">
             Services
           </Link>
         </motion.li>
@@ -83,7 +83,7 @@ export default function Nav({ navRef }) {
           onMouseEnter={liEnter3}
           onMouseLeave={liLeave3}
           variants={liVariants}>
-          <Link to="" className="nav-ul-li-Link">
+          <Link to="/gallery" className="nav-ul-li-Link">
             Gallery
           </Link>
         </motion.li>
@@ -93,7 +93,7 @@ export default function Nav({ navRef }) {
           onMouseEnter={liEnter4}
           onMouseLeave={liLeave4}
           variants={liVariants}>
-          <Link to="" className="nav-ul-li-Link">
+          <Link to="/contact/us" className="nav-ul-li-Link">
             Contact us
           </Link>
         </motion.li>
