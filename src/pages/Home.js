@@ -1,6 +1,6 @@
 import React, { useRef, Fragment, useEffect, useState } from 'react';
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { delay, motion } from 'framer-motion';
 import { MdOutlineRocketLaunch } from 'react-icons/md';
 import { HiOutlineLightBulb } from 'react-icons/hi';
@@ -16,13 +16,13 @@ import videoBg from '../images/home/card-video-bg.mp4';
 
 const buttonVariants = {
   hidden: {
-    y: 0,
+    width: 0,
   },
-  hover: {
-    y: -20,
+  visible: {
+    width: '100%',
     transition: {
-      type: 'spring',
-      stiffness: 120,
+      duration: 2,
+      ease: 'easeInOut',
     },
   },
 };
@@ -53,6 +53,10 @@ export default function Home() {
   const heading = 'Make Your Interior More';
   const heading2 = 'Minimaistic & Modern';
   const btnRef = useRef();
+  const navigate = useNavigate();
+  function exploreNowHandler() {
+    navigate('/gallery');
+  }
 
   function buttonEnter() {
     btnRef.current.classList.remove('button-animation');
@@ -119,16 +123,15 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <motion.button
+                  <button
                     ref={btnRef}
                     className="btn home-col1-btn"
                     onMouseEnter={buttonEnter}
                     onMouseLeave={buttonLeave}
-                    variants={buttonVariants}
-                    initial="hidden"
-                    whileTap="hover">
+                    onClick={exploreNowHandler}>
+                    <motion.span variants={buttonVariants} initial="hidden" animate="visible"></motion.span>
                     Explore Now
-                  </motion.button>
+                  </button>
                 </div>
               </div>
             </div>
@@ -367,7 +370,7 @@ function Expandingcards() {
   return (
     <main className="Expanding-cards-main">
       <div className="container mb-5 ">
-        <div className="d-flex gap-2 flex-wrap flex-sm-nowrap flex-md-nowrap justify-content-center">
+        <div className="d-flex gap-2 flex-column flex-sm-row flex-md-row justify-content-center align-items-center">
           <div className="card Expanding-card card1">
             <motion.div
               className="card-body d-flex justify-content-center align-items-end"
@@ -620,6 +623,10 @@ const getInTouchParaVariants = {
 };
 function Getintouch() {
   const btnRef = useRef();
+  const navigate = useNavigate();
+  function getInTouchHandler() {
+    navigate('/contact');
+  }
   function buttonEnter() {
     btnRef.current.classList.remove('button-animation');
   }
@@ -652,6 +659,7 @@ function Getintouch() {
               className="btn getintouch-button mt-3"
               onMouseEnter={buttonEnter}
               onMouseLeave={buttonLeave}
+              onClick={getInTouchHandler}
               variants={buttonVariants2}
               initial="hidden"
               whileTap="hover">

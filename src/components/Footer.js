@@ -1,46 +1,79 @@
 import React from 'react';
 import './Footer.css';
 import { FaTwitter } from 'react-icons/fa';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import { FaRegCopyright } from 'react-icons/fa';
+import { MdTouchApp } from 'react-icons/md';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="row footer-row">
-          <div className="col-6 col-sm-8 col-md-6">
-            <h5>About Us</h5>
-            <p className="para">
-              Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Aliquam Nec Luctus Arcu, Ut Sagittis Risus. In
-              Consectetur Luctus Metus, Eu Aliquam Nulla Ultrices Ut. Donec Sit Amet Ipsum Semper, Cursus Velit Ut,
-              Dictum Dolor. Nulla Risus Dui, Luctus Vitae Consequat Feugiat, Viverra Et Elit. Curabitur Vel Nisi Et
-              Felis Tempus Ultrices Id At Quam. Donec Id Dictum Velit, At Pretium Ex.
-            </p>
+          <div className="col-6  col-md-6 col-lg-2 d-grid justify-content-center footer-col-1">
+            <div>
+              <h5>Get In Touch</h5>
+              <p>1234567890@gmail.com</p>
+              <p>(+91 0123456789)</p>
+              <p>8779,Lorem st. Abc, NC 27526</p>
+            </div>
           </div>
-          <div className="col-6 col-sm-4 col-md-2">
-            <h5>Get In Touch</h5>
-            <p>1234567890@gmail.com</p>
-            <p>(+91 0123456789)</p>
-            <p>8779,Lorem st. Abc, NC 27526</p>
+          <div className="col-6 col-md-6 col-lg-2 d-grid justify-content-center footer-col-2">
+            <div className="">
+              <h5>Quick Link</h5>
+              <div className="d-grid flex-column">
+                <div className="d-flex gap-1 quick-link-subdiv">
+                  <p>Instagram</p>
+                  <a
+                    href=""
+                    className="btn d-flex gap-1 justify-content-center align-items-center  quick-link-button quick-link-button-1">
+                    Click here <FaInstagram className="quick-link-button-icon" />
+                  </a>
+                </div>
+                <div className="d-flex gap-1 quick-link-subdiv">
+                  <p>Twitter</p>
+                  <a
+                    href=""
+                    className="btn d-flex gap-1 justify-content-center align-items-center  quick-link-button quick-link-button-2">
+                    Click here <FaTwitter className="quick-link-button-icon" />
+                  </a>
+                </div>
+                <div className="d-flex gap-1 quick-link-subdiv">
+                  <p>Facebook</p>
+                  <a
+                    href=""
+                    className="btn d-flex gap-1 justify-content-center align-items-center quick-link-button quick-link-button-3">
+                    Click here <FaFacebook className="quick-link-button-icon" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="col-6 col-sm-6 col-md-2">
-            <h5>Quick Link</h5>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Blog</p>
-            <p>Portfolio</p>
+          <div className="col-6  col-md-8 col-lg-5 d-grid justify-content-start justify-content-sm-center footer-col-3">
+            <div className="footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.557496345707!2d78.77643607480826!3d10.996734989165727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baafb55c878a407%3A0x970c03c4c0d9bba1!2sM.A.M.%20School%20of%20Engineering!5e0!3m2!1sen!2sin!4v1719499447158!5m2!1sen!2sin"
+                width="400"
+                height="200"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
-          <div className="col-6 col-sm-6 col-md-2">
-            <h5>Studio</h5>
-            <p>Terms & Condition</p>
-            <p>Privacy Policy</p>
-            <div className="d-flex gap-3">
-              <a href="" target="blank">
-                <FaTwitter />
-              </a>
-              <a href="" target="blank">
-                <FaLinkedinIn />
-              </a>
+          <div className="col-6  col-md-4 col-lg-3 d-grid justify-content-start justify-content-sm-center justify-content-md-start align-content-center footer-col-4">
+            <div className="d-flex flex-column gap-2 justify-content-start">
+              <div className="d-flex gap-2 copyrights-sub-div">
+                <h5 className="text-center fw-0">
+                  Designed and Developed by deecoders Copyrights <FaRegCopyright className="copyrights-icon me-1" />
+                  2024
+                </h5>
+              </div>
+              <div className="d-flex justify-content-center footer-get-in-touch-div">
+                <a href="" className="btn footer-get-in-touch">
+                  Get In Touch <MdTouchApp className="footer-get-in-touch-icon mb-1" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

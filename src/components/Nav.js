@@ -93,7 +93,7 @@ export default function Nav({ navRef }) {
           onMouseEnter={liEnter4}
           onMouseLeave={liLeave4}
           variants={liVariants}>
-          <Link to="/contact/us" className="nav-ul-li-Link">
+          <Link to="/contact" className="nav-ul-li-Link">
             Contact us
           </Link>
         </motion.li>

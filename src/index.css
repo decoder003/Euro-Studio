@@ -6,6 +6,9 @@
   --main-background: black;
   --svg-background: #f6f1d5;
   --nav-background: black;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  --contact-background: #f6f1d5;
+  --footer-mapshadow: #fff 0px 19px 38px, #fff 0px 15px 12p;
 }
 .dark-mode {
   --background-color: black;
@@ -13,6 +16,9 @@
   --main-background: #f6f1d5;
   --svg-background: #878787;
   --nav-background: #f6f1d5;
+  --shadow: #fff 0px 19px 38px, #fff 0px 15px 12px;
+  --contact-background: black;
+  --footer-mapshadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 body {
   margin: 0;
@@ -25,6 +31,7 @@ body {
   user-select: none;
   touch-action: pan-y;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 code {

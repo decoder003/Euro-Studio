@@ -8,11 +8,13 @@
 }
 .header {
   background-color: var(--nav-background);
+  transition: all 0.3s ease-in-out;
 }
 .Header-col3-button {
   background-color: var(--background-color);
   color: var(--color);
   font-size: 15px;
+  transition: all 0.3s ease-in-out;
 }
 .Header-col3-button:hover {
   background-color: var(--color);

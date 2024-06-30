@@ -6,20 +6,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Spiral as Hamburger } from 'hamburger-react';
 
-const buttonVariants = {
-  hidden: {
-    scale: 1,
-  },
-  hover: {
-    scale: 1.1,
-    ease: 'easeInOut',
-    transition: {
-      type: 'spring',
-      stiffness: 120,
-    },
-  },
-};
-
 const hamburgerVariants = {
   hidden: {
     opacity: 0,
@@ -75,10 +61,7 @@ export default function Header() {
               className="btn fw-bold border Header-col3-button"
               onMouseEnter={buttonEnter}
               onMouseLeave={buttonLeave}
-              onClick={loginHandler}
-              variants={buttonVariants}
-              initial="hidden"
-              whileHover="hover">
+              onClick={loginHandler}>
               Sign In
             </motion.button>
             <div className="hamburger" onClick={navHandler}>

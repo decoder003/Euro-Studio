@@ -6,6 +6,7 @@ import Sign from './components/Sign';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Sign />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

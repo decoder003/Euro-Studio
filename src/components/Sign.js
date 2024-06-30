@@ -34,8 +34,12 @@ const signInSubVariants = {
 };
 
 export default function Sign() {
+  const [login, setLogin] = useState(false);
   const [eye, setEye] = useState(false);
   const [page, setPage] = useState(false);
+  const [emailValue, setEmailValue] = useState({});
+  const [passValue, setPassValue] = useState({});
+
   function eyeHandler() {
     setEye(!eye);
   }
@@ -43,6 +47,13 @@ export default function Sign() {
     setPage(!page);
     e.preventDefault();
   }
+  function emailValueHandler(e) {
+    setEmailValue(e.target.value);
+  }
+  function passValueHandler(e) {
+    setPassValue(e.target.value);
+  }
+
   return (
     <Fragment>
       {page ? (
@@ -54,7 +65,7 @@ export default function Sign() {
               <h3 className="mt-3">LOGIN</h3>
               <motion.div className="form-group mt-3 form-group-1" variants={signInSubVariants}>
                 <label className="form-label">Email</label>
-                <input name="email" type="email" className="form-control" />
+                <input name="email" type="email" className="form-control" onChange={emailValueHandler} />
               </motion.div>
               <motion.div className="form-group mt-3 form-group-2" variants={signInSubVariants}>
                 <label className="form-label">Password</label>
@@ -64,6 +75,7 @@ export default function Sign() {
                     type={!eye ? 'password' : 'type'}
                     className="form-control"
                     aria-describedby="pass"
+                    onChange={passValueHandler}
                   />
                   <span className="input-group-text" id="pass" onClick={eyeHandler}>
                     {eye ? <IoIosEye className="eye" /> : <IoIosEyeOff className="eye" />}
@@ -77,7 +89,9 @@ export default function Sign() {
                 </label>
               </motion.div>
               <motion.div className="login-button mt-3" variants={signInSubVariants}>
-                <button className="btn button">LOGIN</button>
+                <button className="btn buttons" disabled={emailValue.length <= 0 || passValue.length <= 0}>
+                  LOGIN
+                </button>
               </motion.div>
               <motion.div className="d-flex justify-content-end mt-2" variants={signInSubVariants}>
                 <a href="" className="text-decoration-none login-a">
@@ -116,11 +130,12 @@ export default function Sign() {
 function SignUp() {
   const [eye, setEye] = useState(false);
   const [eye2, setEye2] = useState(false);
+  const [email, setEmail] = useState({});
   const [page, setPage] = useState(false);
   const [pass, setPass] = useState({});
   const [newpass, setNewPass] = useState({});
   const newPassRef = useRef();
-  // const newEmailRef = useRef();
+
   function eyeHandler() {
     setEye(!eye);
   }
@@ -137,6 +152,9 @@ function SignUp() {
   }
   function newPassHandler(e) {
     setNewPass(e.target.value);
+  }
+  function emailHandler(e) {
+    setEmail(e.target.value);
   }
   function inputHandler() {
     if (pass.length && newpass.length != 0) {
@@ -159,7 +177,7 @@ function SignUp() {
               <h3 className="mt-3">SIGN UP</h3>
               <motion.div className="form-group mt-3 form-group-1" variants={signInSubVariants}>
                 <label className="form-label">Email</label>
-                <input name="email" type="email" className="form-control" />
+                <input name="email" type="email" className="form-control" onChange={emailHandler} />
               </motion.div>
               <motion.div className="form-group mt-3 form-group-2" variants={signInSubVariants}>
                 <label className="form-label">Password</label>
@@ -193,7 +211,9 @@ function SignUp() {
                 </div>
               </motion.div>
               <motion.div className="login-button mt-3" variants={signInSubVariants}>
-                <button className="btn button">SIGN UP</button>
+                <button className="btn buttons" disabled={pass.length <= 0 || email.length <= 0}>
+                  SIGN UP
+                </button>
               </motion.div>
               <motion.div className="d-flex mt-3" variants={signInSubVariants}>
                 <div className="login-line mt-2"></div>

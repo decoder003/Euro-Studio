@@ -1,20 +1,38 @@
 .home-col1-btn {
-  background-color: var(--color);
+  background-color: transparent;
   color: var(--background-color);
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
   font-size: 15px;
   font-weight: bold;
   width: 150px;
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  isolation: isolate;
 }
+.home-col1-btn span {
+  background-color: var(--color);
+  border-radius: 5px;
+  position: absolute;
+  inset: 0px;
+  z-index: -1;
+  height: 100%;
+}
+
 .home-col1-btn:hover {
-  border: 2px solid var(--background-color);
+  color: var(--color);
+  border: 1px solid var(--color);
+}
+.home-col1-btn:hover span {
+  background-color: var(--background-color);
 }
 
 .home {
   background-image: url('../images/home/home-background.jpg');
   background-size: cover;
-  height: 85vh;
+  min-height: 85vh;
   position: relative;
   isolation: isolate;
   border-bottom: 10px solid #a9a9a9;
@@ -59,16 +77,18 @@
 .svg-para,
 .sub-heading {
   color: var(--color);
+  transition: all 0.3s ease-in-out;
 }
 .svg {
   margin: 60px 0;
   background-color: var(--svg-background);
+  transition: all 0.3s ease-in-out;
 }
 .svg-box {
   transition: all 0.5s ease-in-out;
 }
 .svg-box:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -77,7 +97,7 @@
 }
 .svg-box:hover .bg-icon {
   color: black;
-  background-color: #fff700;
+  background-color: #d5b60a;
   transition: all 0.3s ease-in-out;
 }
 /* .svg-box:hover .svg-para,
@@ -87,16 +107,19 @@
 .quotes {
   padding-top: 100px;
   color: var(--svg-background);
+  transition: all 0.3s ease-in-out;
 }
 .quotes-first-line {
   width: 100px;
   height: 1px;
   background-color: var(--svg-background);
+  transition: all 0.3s ease-in-out;
 }
 .quotes-second-line {
   width: 50px;
   height: 1px;
   background-color: var(--svg-background);
+  transition: all 0.3s ease-in-out;
 }
 .line-col-1,
 .line-col-2 {
@@ -112,8 +135,6 @@
 }
 .Expanding-card::after {
   content: '';
-  /* width: 100px;
-  height: 500px; */
   background-color: black;
   border-radius: 50px;
   position: absolute;
@@ -184,15 +205,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 .project-line {
   width: 1px;
   height: 60px;
   background-color: var(--background-color);
   border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 }
 .project-col-1 {
   color: var(--background-color);
+  transition: all 0.3s ease-in-out;
 }
 .react-icons {
   width: 20px;
@@ -239,6 +263,7 @@
   background-color: var(--background-color);
   color: var(--color);
   font-weight: 300;
+  transition: all 0.5s ease-in-out;
 }
 .getintouch-button:hover {
   border: 1px solid var(--color);
@@ -341,12 +366,15 @@
 
   .card-body-2 {
     display: none;
+    transition: all 0.5s ease-in-out 1s;
   }
   .Expanding-card:hover .card-body-2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease-in-out 1s;
   }
+
   .project-content {
     padding-top: 20px;
   }
@@ -360,13 +388,20 @@
   .home-col1-h3 h3 {
     margin-right: 0px;
   }
+  .Expanding-card:hover {
+    width: 350px;
+    height: 500px;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+  }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .line-col-1 {
     margin-bottom: 50px;
   }
   .card-body-2 {
     display: none;
+    transition: all 1s ease-in-out 1s;
   }
   .svg-col-2,
   .svg-col-3 {
@@ -376,6 +411,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s ease-in-out 1s;
   }
   .project-content {
     margin-top: 30px;
@@ -388,14 +424,17 @@
     margin-right: 0px;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .card-body-2 {
     display: none;
+    transition: all 1s ease-in-out 1s;
   }
   .Expanding-card:hover .card-body-2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s ease-in-out 1s;
   }
   .project-content {
     margin-top: 20px;

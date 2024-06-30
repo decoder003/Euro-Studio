@@ -119,7 +119,7 @@ export default function Gallery() {
             <h2 className="text-center mb-5 bedroom-heading">MASTER BEDROOM</h2>
             <div className="row bedroom-row">
               <motion.div
-                className="col-12 col-md-6 d-flex flex-column gap-3  bedroom-col-1"
+                className="col-12 col-md-6 d-flex flex-column gap-3  interior-col-1"
                 variants={columnVariants}
                 initial="hidden"
                 whileInView="visible">
