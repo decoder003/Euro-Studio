@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="row footer-row">
-          <div className="col-6  col-md-6 col-lg-2 d-grid justify-content-center footer-col-1">
+          <div className="col-6  col-md-6 col-lg-4 d-grid justify-content-center footer-col-1">
             <div>
               <h5>Get In Touch</h5>
               <p>1234567890@gmail.com</p>
@@ -19,7 +19,7 @@ export default function Footer() {
               <p>8779,Lorem st. Abc, NC 27526</p>
             </div>
           </div>
-          <div className="col-6 col-md-6 col-lg-2 d-grid justify-content-center footer-col-2">
+          <div className="col-6 col-md-6 col-lg-4 d-grid justify-content-center footer-col-2">
             <div className="">
               <h5>Quick Link</h5>
               <div className="d-grid flex-column">
@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-6  col-md-8 col-lg-5 d-grid justify-content-start justify-content-sm-center footer-col-3">
+          <div className="col-12  col-md-12 col-lg-4 d-grid justify-content-center justify-content-sm-center footer-col-3">
             <div className="footer-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.557496345707!2d78.77643607480826!3d10.996734989165727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baafb55c878a407%3A0x970c03c4c0d9bba1!2sM.A.M.%20School%20of%20Engineering!5e0!3m2!1sen!2sin!4v1719499447158!5m2!1sen!2sin"
@@ -59,21 +59,6 @@ export default function Footer() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-          <div className="col-6  col-md-4 col-lg-3 d-grid justify-content-start justify-content-sm-center justify-content-md-start align-content-center footer-col-4">
-            <div className="d-flex flex-column gap-2 justify-content-start">
-              <div className="d-flex gap-2 copyrights-sub-div">
-                <h5 className="text-center fw-0">
-                  Designed and Developed by deecoders Copyrights <FaRegCopyright className="copyrights-icon me-1" />
-                  2024
-                </h5>
-              </div>
-              <div className="d-flex justify-content-center footer-get-in-touch-div">
-                <a href="" className="btn footer-get-in-touch">
-                  Get In Touch <MdTouchApp className="footer-get-in-touch-icon mb-1" />
-                </a>
-              </div>
             </div>
           </div>
         </div>

@@ -43,11 +43,12 @@ const buttonVariants = {
     },
   },
 };
-export default function Services() {
+export default function Services({ footer, setFooter }) {
   const heading = 'Our  Services';
   const navigate = useNavigate();
   function getInTouchHandler() {
     navigate('/contact');
+    setFooter(!footer);
   }
   return (
     <main className="services">

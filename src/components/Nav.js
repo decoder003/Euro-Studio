@@ -25,7 +25,7 @@ const liVariants = {
   },
 };
 
-export default function Nav({ navRef }) {
+export default function Nav({ navRef, footer, setFooter, setOpen, isOpen }) {
   const liRef1 = useRef();
   const liRef2 = useRef();
   const liRef3 = useRef();
@@ -54,6 +54,16 @@ export default function Nav({ navRef }) {
   function liLeave4() {
     liRef4.current.classList.add('li-animation');
   }
+  function contactFooterHandler() {
+    setFooter(!footer);
+    setOpen(!isOpen);
+    navRef.current.classList.remove('nav-hamburger');
+  }
+  function footerHandler() {
+    setFooter(true);
+    setOpen(!isOpen);
+    navRef.current.classList.remove('nav-hamburger');
+  }
   return (
     <nav ref={navRef} className="nav">
       <motion.ul className="list-inline nav-ul" variants={ulVariants} initial="hidden" animate="visible">
@@ -62,6 +72,7 @@ export default function Nav({ navRef }) {
           className="list-inline-item nav-ul-li"
           onMouseEnter={liEnter1}
           onMouseLeave={liLeave1}
+          onClick={footerHandler}
           variants={liVariants}>
           <Link to="/" className="nav-ul-li-Link">
             Home
@@ -72,7 +83,8 @@ export default function Nav({ navRef }) {
           className="list-inline-item nav-ul-li"
           variants={liVariants}
           onMouseEnter={liEnter2}
-          onMouseLeave={liLeave2}>
+          onMouseLeave={liLeave2}
+          onClick={footerHandler}>
           <Link to="/services" className="nav-ul-li-Link">
             Services
           </Link>
@@ -82,6 +94,7 @@ export default function Nav({ navRef }) {
           className="list-inline-item nav-ul-li"
           onMouseEnter={liEnter3}
           onMouseLeave={liLeave3}
+          onClick={footerHandler}
           variants={liVariants}>
           <Link to="/gallery" className="nav-ul-li-Link">
             Gallery
@@ -92,6 +105,7 @@ export default function Nav({ navRef }) {
           className="list-inline-item nav-ul-li"
           onMouseEnter={liEnter4}
           onMouseLeave={liLeave4}
+          onClick={contactFooterHandler}
           variants={liVariants}>
           <Link to="/contact" className="nav-ul-li-Link">
             Contact us

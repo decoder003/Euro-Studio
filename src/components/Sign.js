@@ -4,6 +4,7 @@ import { IoIosEyeOff } from 'react-icons/io';
 import { FcGoogle } from 'react-icons/fc';
 import { motion } from 'framer-motion';
 import './Sign.css';
+import { useNavigate } from 'react-router-dom';
 
 const signInVariants = {
   hidden: {
@@ -34,6 +35,7 @@ const signInSubVariants = {
 };
 
 export default function Sign() {
+  const navigate = useNavigate();
   const [login, setLogin] = useState(false);
   const [eye, setEye] = useState(false);
   const [page, setPage] = useState(false);
@@ -52,6 +54,9 @@ export default function Sign() {
   }
   function passValueHandler(e) {
     setPassValue(e.target.value);
+  }
+  function forgotPasswordHandler() {
+    navigate('/newpassword');
   }
 
   return (
@@ -94,7 +99,7 @@ export default function Sign() {
                 </button>
               </motion.div>
               <motion.div className="d-flex justify-content-end mt-2" variants={signInSubVariants}>
-                <a href="" className="text-decoration-none login-a">
+                <a href="" className="text-decoration-none login-a" onClick={forgotPasswordHandler}>
                   Forgot Password?
                 </a>
               </motion.div>

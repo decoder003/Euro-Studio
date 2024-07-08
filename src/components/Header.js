@@ -20,7 +20,7 @@ const hamburgerVariants = {
     },
   },
 };
-export default function Header() {
+export default function Header({ footer, setFooter }) {
   const [isOpen, setOpen] = useState(false);
   const [mode, setMode] = useState(false);
   const navRef = useRef();
@@ -34,6 +34,7 @@ export default function Header() {
   }
   function loginHandler() {
     navigate('/login');
+    setFooter(true);
   }
   function navHandler() {
     navRef.current.classList.toggle('nav-hamburger');
@@ -47,12 +48,12 @@ export default function Header() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-3">
-            <img src="Assets/logo.png" className="logo" />
+            <img src={!mode ? 'Assets/logoDark.png' : 'Assets/logoLight.png'} className="logo" />
           </div>
-          <div className="col-3 col-sm-6 col-md-6 d-flex justify-content-center align-items-center pt-2">
-            <Nav navRef={navRef} />
+          <div className="col-1 col-sm-6 col-md-6 d-flex justify-content-center align-items-center pt-2">
+            <Nav navRef={navRef} footer={footer} setFooter={setFooter} isOpen={isOpen} setOpen={setOpen} />
           </div>
-          <div className="col-sm-3 col-md-3 col-6 d-flex justify-content-evenly justify-content-sm-around justify-content-md-around align-items-center">
+          <div className="col-sm-3 col-md-3 col-8 d-flex justify-content-evenly justify-content-sm-around justify-content-md-around align-items-center">
             <motion.div onClick={modeHandler} variants={hamburgerVariants} initial="hidden" animate="visible">
               <img src={!mode ? 'Assets/sun.png' : 'Assets/moon.png'} className="mode" />
             </motion.div>

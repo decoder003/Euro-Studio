@@ -49,13 +49,14 @@ const quoteLineVariants = {
   },
 };
 
-export default function Home() {
+export default function Home({ footer, setFooter }) {
   const heading = 'Make Your Interior More';
   const heading2 = 'Minimaistic & Modern';
   const btnRef = useRef();
   const navigate = useNavigate();
   function exploreNowHandler() {
     navigate('/gallery');
+    setFooter(true);
   }
 
   function buttonEnter() {
@@ -74,7 +75,7 @@ export default function Home() {
                 <div className="d-flex gap-1">
                   {heading.split('').map((head, index) => {
                     return head === ' ' ? (
-                      <h1>&nbsp;</h1>
+                      <h1 key={index}>&nbsp;</h1>
                     ) : (
                       <motion.h1
                         className="fw-bold home-col-h1"
@@ -96,7 +97,7 @@ export default function Home() {
                 <div className="d-flex gap-1">
                   {heading2.split('').map((head, index) => {
                     return head === ' ' ? (
-                      <h1>&nbsp;</h1>
+                      <h1 key={index}>&nbsp;</h1>
                     ) : (
                       <motion.h1
                         className="fw-bold home-col-h1"
@@ -171,7 +172,7 @@ export default function Home() {
       <Svg />
       <Expandingcards />
       <Projectsteps />
-      <Getintouch />
+      <Getintouch footer={footer} setFooter={setFooter} />
     </Fragment>
   );
 }
@@ -621,11 +622,12 @@ const getInTouchParaVariants = {
     },
   },
 };
-function Getintouch() {
+function Getintouch({ footer, setFooter }) {
   const btnRef = useRef();
   const navigate = useNavigate();
   function getInTouchHandler() {
     navigate('/contact');
+    setFooter(!footer);
   }
   function buttonEnter() {
     btnRef.current.classList.remove('button-animation');

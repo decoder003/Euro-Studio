@@ -7,19 +7,24 @@ import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import ContactFooter from './components/ContactFooter';
+import { useState } from 'react';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
+  const [footer, setFooter] = useState(true);
   return (
     <div className="App">
-      <Header />
+      <Header footer={footer} setFooter={setFooter} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home footer={footer} setFooter={setFooter} />} />
         <Route path="/login" element={<Sign />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Services footer={footer} setFooter={setFooter} />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/newpassword" element={<ForgotPassword />} />
       </Routes>
-      <Footer />
+      {footer ? <Footer /> : <ContactFooter />}
     </div>
   );
 }
